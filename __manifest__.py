@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Dashboard",
+    'name': "Custom Dashboard",
 
     'summary': " ",
 
@@ -13,10 +13,13 @@
 
     'depends': [
         'base',
+        'product',
+        'account',
+        'sale',
         # 'base_setup',
         # 'mail',
         # 'website',
-        # 'smartedu_core',
+        'smartedu_core',
         # 'web_tour',
         # 'web_kanban_gauge',
     ],
@@ -33,7 +36,9 @@
     'assets': {
         'web.assets_backend': [
             'custom_dashboard/static/src/js/dashboard.js',
+            'custom_dashboard/static/src/js/libs/Chart.bundle.js',
             'custom_dashboard/static/src/xml/dashboard.xml',
+            # 'custom_dashboard/static/src/csee/custom_css.css',
         ],
     },
 

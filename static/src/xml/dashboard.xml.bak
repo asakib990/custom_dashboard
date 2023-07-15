@@ -1,0 +1,169 @@
+<template id="template" xml:space="preserve">
+    <t t-name="dashboard_header_section">
+        <div class="container">
+            <button class="btn btn-primary add_new_block" data-type="tile" type="button">Add Block</button>
+            <button class="btn btn-primary add_new_block" data-type="graph" type="button">Add Graph</button>
+            <div class="dynamic_dashboard row"/>
+            <div style="padding-top: 100px" class="dynamic_chart row"/>
+        </div>
+    </t>
+
+    <t t-name="dashboard_tile_new">
+		<div class="oh_dashboard">
+			<div class="o_pos_dashboard">
+                    <div class="container">
+                        <div class="row">
+
+                            <!-- Card View -->
+                            <div class="col-4">
+                                <div class="row">
+
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-12 oh-data m-0 w-auto" style="padding: 0px !important;">
+                                        <div class="card rounded-3 shadow-sm align-items-center justify-content-center" style="width: 10rem; height:8rem; background: #23B7E5;">
+                                            <!-- <div class="card-body text-info">
+                                                <div class="d-flex flex justify-content-between">
+                                                    <div class="stat-icon p-2">
+                                                        <i class="fa fa-user fa-3x"></i>
+                                                    </div>
+                                                    <div class="px-4">
+                                                        <div class="title-text">
+                                                            <h1>User</h1>
+                                                            <div class="d-flex justify-content-center">
+                                                                <h5><span class="badge bg-info text-light">5</span></h5>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="p-1 item align-items-center">
+                                                <div class="h1 text-white font-thin h1 text-center">521</div>
+                                                <span class="text-muted text-xs">New items</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-12 oh-data m-0 w-auto" style="padding: 0px !important;">
+                                        <div class="card rounded-3 shadow-sm align-items-center justify-content-center" style="width: 10rem; height:8rem;">
+                                            <!-- <div class="card-body text-success">
+                                                <div class="d-flex flex justify-content-between">
+                                                    <div class="stat-icon p-2">
+                                                        <i class="fa fa-star fa-3x"></i>
+                                                    </div>
+                                                    <div class="px-4">
+                                                        <div class="title-text">
+                                                            <h1>Home</h1>
+                                                            <div class="d-flex justify-content-center">
+                                                                <p class="text-center bg-light rounded-circle" style="width:2rem;">5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="p-1 item align-items-center">
+                                                <div class="h1 text-white font-thin h1 text-center">521</div>
+                                                <span class="text-muted text-xs">New items</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-12 oh-data m-0 w-auto" style="padding: 0px !important;">
+                                        <div class="card rounded-3 shadow-sm bg-light align-items-center justify-content-center" style="width: 10rem; height:8rem;">
+                                            <!-- <div class="card-body text-primary">
+                                                <div class="d-flex flex justify-content-between">
+                                                    <div class="stat-icon p-2">
+                                                        <i class="fa fa-building fa-3x"></i>
+                                                    </div>
+                                                    <div class="px-4">
+                                                        <div class="title-text">
+                                                            <h1>Buildings</h1>
+                                                            <div class="d-flex justify-content-center">
+                                                                <p class="text-center bg-light rounded-circle" style="width:2rem;">5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="p-1 item align-items-center">
+                                                <div class="h1 text-info font-thin h1 text-center">521</div>
+                                                <span class="text-muted text-xs">New items</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6 col-lg-6 col-md-6 col-sm-12 oh-data m-0 w-auto" style="padding: 0px !important;">
+                                        <div class="card rounded-3 shadow-sm bg-light align-items-center justify-content-center" style="width: 10rem; height:8rem;">
+                                            <!-- <div class="card-body text-warning">
+                                                <div class="d-flex flex justify-content-between">
+                                                    <div class="stat-icon p-2">
+                                                        <i class="fa fa-car fa-3x"></i>
+                                                    </div>
+                                                    <div class="px-4">
+                                                        <div class="title-text">
+                                                            <h1>Transport</h1>
+                                                            <div class="d-flex justify-content-center">
+                                                                <p class="text-center bg-light rounded-circle" style="width:2rem;">5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            <div class="p-1 item align-items-center">
+                                                <div class="h1 text-info font-thin h1 text-center">521</div>
+                                                <span class="text-muted text-xs">New items</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-lg-6 col-md-6 col-sm-12 oh-data m-0 w-auto" style="padding: 0px !important;">
+                                        <div class="card rounded-3 shadow-sm align-items-center justify-content-center" style="width: 20rem; height:8rem; background: #E4EAEC;">
+                                            <!-- <div class="card-body text-warning">
+                                                <div class="d-flex flex justify-content-between">
+                                                    <div class="stat-icon p-2">
+                                                        <i class="fa fa-car fa-3x"></i>
+                                                    </div>
+                                                    <div class="px-4">
+                                                        <div class="title-text">
+                                                            <h1>Transport</h1>
+                                                            <div class="d-flex justify-content-center">
+                                                                <p class="text-center bg-light rounded-circle" style="width:2rem;">5</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+
+                                            <div class="p-1 item align-items-center">
+                                                <div class="h1 text-info font-thin h1 text-center">521</div>
+                                                <span class="text-muted text-xs">New items</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <!-- Chart View -->
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6 col-md-6 d-flex justify-content-start align-item-start px-1">
+                                        <div class="team_ticket_div half_chart chart-container card-shadow bg-white rounded-3">
+                                            <h2 style="margin-top:1rem;" class="fs-1 text-muted text-center">Services Graph</h2>
+                                            <hr /> 
+                                            <div class="graph_canvas">
+                                                <canvas class="sale_order_count" width="auto" height="auto" />
+                                            </div> 
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+			
+		</div>
+	</t>
+
+</template>
