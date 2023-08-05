@@ -160,31 +160,70 @@ odoo.define('custom_dashboard.dashboard', function (require) {
             console.log("FETCH_DATE FUNCTION")
             var self = this;
             var def1 =  this._rpc({
-                    model: 'se.student',
+                    model: 'res.partner',
                     method: 'get_user_details'
             }).then(function (result) {
                 var result = result[0];
                 console.log("Returned user details:", result);
 
+                // old
+                // var base64String = result.image;
+                // var imageElement = document.getElementById("image");
+                // imageElement.src = "data:image/png;base64," + base64String;
+
+                // new
                 var base64String = result.image;
-                var imageElement = document.getElementById("image_1920");
-                imageElement.src = "data:image/png;base64," + base64String;
+                var imageElement = document.getElementById("image");
+                var defaultIconUrl = "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg";
+                
+                if (base64String) {
+                    console.log("base64String", base64String)
+                    imageElement.src = "data:image/png;base64," + base64String;
+                } else {
+                    console.log("defaultIconUrl", defaultIconUrl)
+                    imageElement.src = defaultIconUrl;
+                }
 
                 $('#user_name').append('<span>' + result.name + '</span>');
                 $('#user_email').append('<span>' + result.email + '</span>');
-                $('#user_batch').append('<span>' + result.batch + '</span>');
                 self.login_user = result[0];
             });
-            // var def2 = self._rpc({
-            //     model: "hr.employee",
-            //     method: "get_upcoming",
-            // })
-            // .then(function (res) {
-            //     self.employee_birthday = res['birthday'];
-            //     self.upcoming_events = res['event'];
-            //     self.announcements = res['announcement'];
-            // });
-            return $.when(def1);
+            var def2 = self._rpc({
+                model: "project.task",
+                method: "get_project_details",
+            })
+            .then(function (res) {
+                console.log("res", res)
+                console.log("res.length", res.length)
+                for (var i = 0; i < res.length; i++){
+                    console.log("res[i]", res[i])
+                    console.log("res[i].name", res[i].name)
+                    console.log("res[i].progress", res[i].progress)
+
+                    var data = 
+                        '<div class="container"' +
+                        '<label class="tx-12 tx-uppercase tx-inverse tx-semibold tx-spacing-1">' + res[i].name + '</label>' +
+                        '<div class="progress my-2" style="background: white;">' +
+                        '<div class="progress-bar progress-bar-striped" style="width: ' + res[i].progress + '%" role="progressbar" aria-valuenow="' + res[i].progress + '" aria-valuemin="0" aria-valuemax="100"></div>' +
+                        '</div>' +
+                        '</div \n>'
+                    
+                        console.log('data', data);
+                        $('#task_list').append(data);
+
+                }
+                // var taskName = res.name;
+                // var taskProgress = res.progress;
+
+                // console.log("taskName", taskName);
+                // console.log("taskProgress", taskProgress);
+                
+                // $('#statusLabel').append('<span>' + taskName + '</span>');
+                // $('#progressBar').css('width', taskProgress + "%").attr('aria-valuenow', taskProgress);
+                // $('#progressBar').attr('aria-valuemin', 0).attr('aria-valuemax', 100);
+
+            });
+            return $.when(def1, def2);
         },
 
         // render_dashboards: function() {console.log("RENDER_DASHBOARD")

@@ -16,6 +16,7 @@
         'product',
         'account',
         'sale',
+        'web',
         # 'base_setup',
         # 'mail',
         # 'website',
